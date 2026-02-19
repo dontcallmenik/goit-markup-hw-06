@@ -1,8 +1,8 @@
 /* ========== BASE STYLES ========== */
 .container {
-  max-width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
+  max-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -134,6 +134,11 @@ body {
   margin-left: auto;
 }
 
+.nav-list,
+.address {
+  display: none;
+}
+
 .address-list {
   display: flex;
   gap: 40px;
@@ -156,6 +161,20 @@ body {
 }
 
 .hero {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 72px 52px 200px 52px;
+
+  background-image:
+    linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/people-office-1.jpg);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*.hero {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
@@ -167,6 +186,7 @@ body {
   background-position: center;
   background-size: cover;
 }
+  */
 .hero .container {
   display: flex;
   flex-direction: column;
@@ -223,7 +243,7 @@ body {
 }
 
 /* ========== FEATURES ========== */
-.features-icons {
+/*.features-icons {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,8 +254,11 @@ body {
   margin-bottom: 8px;
   border: 1px solid #8e8f99;
 }
-
-.features-list {
+*/
+.features-icons {
+  display: none; /* ХОВАЄМО іконки на мобільному */
+}
+/*.features-list {
   display: flex;
   gap: 24px;
 }
@@ -243,10 +266,19 @@ body {
 .features-list li {
   width: calc((100% - 72px) / 4);
 }
-
+  */
+.features-list {
+  display: flex;
+  flex-direction: column; /* колонка */
+  gap: 72px;
+}
+.features-list li {
+  width: 100%;
+}
 .features-item-title {
+  text-align: center;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 36px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
@@ -254,9 +286,10 @@ body {
 }
 
 .features-text {
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  letter-spacing: 0.02em;
+  text-align: center;
   color: #434455;
 }
 
@@ -278,10 +311,14 @@ body {
 
 .team-list {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  gap: 72px;
+}
+.team-item {
+  width: 100%;
 }
 
-.team-item {
+/*.team-item {
   background-color: #ffffff;
   border-radius: 0px 0px 4px 4px;
   box-shadow:
@@ -289,7 +326,8 @@ body {
     0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
   width: calc((100% - 72px) / 4);
-}
+  }
+   */
 
 .team-content {
   padding: 32px 16px;
@@ -349,6 +387,14 @@ body {
 
 .portfolio-list {
   display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.portolio-item {
+  width: 100%;
+}
+/*.portfolio-list {
+  display: flex;
   flex-wrap: wrap;
   column-gap: 24px;
   row-gap: 48px;
@@ -358,6 +404,7 @@ body {
   width: calc((100% - 48px) / 3);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+  */
 
 .portfolio-item:hover {
   box-shadow:
@@ -424,27 +471,47 @@ body {
   background-color: #2e2f42;
   padding: 100px 0;
 }
-
 .footer .container {
   display: flex;
-  align-items: baseline;
+  flex-direction: column;
+  gap: 72px;
 }
-.footer-container {
+
+/*.footer .container {
   display: flex;
-  align-items: flex-start; /* вирівнювання по верхньому краю */
-  width: 100%;
+  align-items: baseline;
+} */
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 72px;
 }
-.footer-info {
-  display: flex; /* логотип і текст вертикально */
+
+/*.footer-info {
+  display: flex; 
   flex-direction: column;
   max-width: 264px;
-  margin-right: 120px; /* відступ від соцмереж */
+  margin-right: 120px; 
 }
+*/
+.footer-info {
+  margin-right: 0;
+}
+
 .footer-links {
+  margin-right: 0;
+}
+.footer-subscribe {
+  margin-left: 0;
+}
+/*.footer-links {
   display: flex;
   flex-direction: column;
-  margin-right: auto; /* автоматичний відступ до підписки */
+  margin-right: auto; 
 }
+*/
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
@@ -481,6 +548,7 @@ body {
 
 .footer-social-list {
   display: flex;
+  justify-content: center;
   gap: 16px; /* відстань між іконками соцмереж */
   padding: 0;
   margin: 0;
@@ -843,11 +911,12 @@ TEXT & LINKS
 /* =========================
 SUBSCRIBE FORM
 ========================= */
-.footer-subscribe {
+/*.footer-subscribe {
   display: flex;
   flex-direction: column;
-  margin-left: 0; /* прилипає до правого краю */
+  margin-left: 0; 
 }
+*/
 .subscribe-title {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -861,13 +930,15 @@ SUBSCRIBE FORM
 
 .subscribe-form {
   display: flex;
-  gap: 24px;
-  border-radius: 4px;
+  flex-direction: column; /* всё в колонку */
+  gap: 16px;
+  align-items: center; /* чтобы кнопка и input были по центру */
+  width: 100%;
 }
 
 .subscribe-input {
   padding: 8px 16px;
-  width: 264px;
+  width: 288px;
   height: 40px;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 1); /* Біла рамка */
@@ -898,8 +969,8 @@ SUBSCRIBE FORM
   align-items: center;
   justify-content: center;
   gap: 16px;
-  min-width: 165px;
-  height: 40px;
+  height: 40px; /* мобильная высота */
+  min-width: 165px; /* мобильная минимальная ширина */
   padding: 8px 24px;
   background-color: #4d5ae5;
   color: white;
@@ -920,4 +991,514 @@ SUBSCRIBE FORM
 
 .subscribe-button svg {
   fill: currentColor;
+}
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Ховаємо звичайну навігацію на мобілці */
+@media (max-width: 767px) {
+  .navigation,
+  .address {
+    display: none;
+  }
+}
+
+/* Показуємо кнопку бургер на мобілці */
+@media (max-width: 767px) {
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* Ховаємо кнопку бургер на планшеті і компі */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Мобільне меню - спочатку приховане */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 72px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%); /* СХОВАНО */
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 999;
+}
+
+/* Коли додадуть клас is-open - показуємо */
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+/* Кнопка закриття */
+.mobile-menu-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  margin-bottom: auto;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Звичайний стан - сірий */
+.mobile-nav-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: #2e2f42; /* СІРИЙ, як звичайний */
+  text-decoration: none;
+}
+
+/* Активний/ховер - синій */
+.mobile-nav-link.active,
+.mobile-nav-link:hover,
+.mobile-nav-link:focus {
+  color: #404bbf;
+}
+
+.mobile-address {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-style: normal;
+}
+
+/* Телефон - звичайний сірий */
+.mobile-phone {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: #2e2f42; /* СІРИЙ */
+  text-decoration: none;
+}
+
+/* Ховер для телефону - синій */
+.mobile-phone:hover,
+.mobile-phone:focus {
+  color: #404bbf;
+}
+
+/* Email - звичайний сірий */
+.mobile-email {
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #2e2f42; /* СІРИЙ */
+  text-decoration: none;
+}
+
+/* Ховер для email - синій */
+.mobile-email:hover,
+.mobile-email:focus {
+  color: #404bbf;
+}
+/* Колір для кнопки меню */
+.menu-toggle svg {
+  fill: #2e2f42; /* темно-сірий */
+}
+
+/* Колір для кнопки закриття */
+.mobile-menu-close svg {
+  fill: #2e2f42;
+}
+
+/* При ховері можна змінювати колір */
+.menu-toggle:hover svg,
+.mobile-menu-close:hover svg {
+  fill: #404bbf; /* синій */
+}
+/* Ховаємо мобільне меню на планшеті і компі */
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+/* =========================
+   MEDIA QUERIES */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1158px;
+  }
+}
+
+@media (min-width: 768px) {
+  .team-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; /* центруємо картки */
+    gap: 64px 24px; /* вертикальний 64px, горизонтальний 24px */
+    max-width: 584px; /* як у макеті */
+    margin: 0 auto; /* центруємо список */
+  }
+
+  .team-item {
+    width: calc((100% - 24px) / 2); /* 2 колонки */
+    background-color: #ffffff;
+    border-radius: 0px 0px 4px 4px;
+    box-shadow:
+      0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16),
+      0px 2px 1px rgba(46, 47, 66, 0.08);
+  }
+
+  .team-item img {
+    width: 100%; /* фото на всю ширину картки */
+    height: auto;
+  }
+
+  .team-content {
+    padding: 32px 16px;
+    text-align: center;
+  }
+
+  .team-name {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    margin-bottom: 8px;
+  }
+
+  .team-position {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+    margin-bottom: 8px;
+  }
+
+  /* Соціальні іконки */
+  .social-icons-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .team-social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .team-social-links:hover,
+  .team-social-links:focus {
+    background-color: #404bbf;
+  }
+
+  .team-social-links svg {
+    fill: #f4f4fd;
+  }
+}
+@media (min-width: 1158px) {
+  .team {
+    padding: 120px 0;
+  }
+
+  .team-list {
+    max-width: 1158px;
+    gap: 24px;
+  }
+
+  .team-item {
+    width: calc((100% - 72px) / 4); /* 4 колонки */
+  }
+}
+@media (min-width: 768px) {
+  .portfolio-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 72px;
+  }
+  .portfolio-item {
+    width: calc((100% - 24px) / 2);
+  }
+}
+/* ========== ДЕСКТОП (1158px) ========== */
+@media (min-width: 1158px) {
+  .portfolio-item {
+    width: calc((100% - 48px) / 3);
+  }
+
+  /* Фіксований розмір для зображень на десктопі */
+  .portfolio-image-wrapper {
+    width: 360px; /* фіксована ширина */
+    height: 300px; /* фіксована висота */
+  }
+
+  .portfolio-image-wrapper img {
+    width: 360px;
+    height: 300px;
+    object-fit: cover; /* обрізає, щоб заповнити */
+  }
+}
+@media (min-width: 768px) {
+  .hero {
+    max-width: 768px;
+    padding: 112px 0;
+    background-image:
+      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/people-office-1.jpg);
+  }
+}
+
+@media (min-width: 1158px) {
+  .hero {
+    max-width: 1440px;
+    padding: 188px 0;
+    background-image:
+      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/people-office-1.jpg);
+  }
+}
+@media (min-width: 768px) {
+  .nav-list {
+    display: flex;
+    gap: 40px;
+  }
+  .nav-link {
+    display: block;
+    padding: 24px 0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .address {
+    display: block;
+    font-style: normal;
+    margin-left: auto;
+  }
+  .address-list {
+    display: flex;
+    flex-direction: column; /* колонка для контактів */
+    gap: 12px; /* відступ між контактами */
+  }
+  .contact-link {
+    display: block;
+    padding: 0; /* прибираємо падінг */
+    text-decoration: none;
+    font-size: 12px; /* менший шрифт */
+    line-height: 1.17; /* 14px */
+    letter-spacing: 0.04em;
+    color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .contact-link:hover,
+  .contact-link:focus {
+    color: #404bbf;
+  }
+}
+@media (min-width: 1158px) {
+  .address-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .contact-link {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 24px 0;
+  }
+}
+@media (min-width: 768px) {
+  .footer .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 72px 24px;
+    max-width: 584px;
+    margin: 0 auto;
+  }
+
+  /* Верхній рядок - логотип і соцмережі */
+  .footer-info {
+    width: 264px;
+  }
+
+  .footer-links {
+    width: 208px;
+  }
+
+  /* Нижній рядок - форма підписки */
+  .footer-subscribe {
+    width: 100%; /* займає весь рядок */
+  }
+
+  .subscribe-form {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    justify-content: flex-start; /* вирівнювання зліва */
+  }
+
+  .subscribe-input {
+    width: 264px;
+    height: 40px;
+  }
+
+  .subscribe-button {
+    width: 165px;
+    height: 40px;
+  }
+
+  /* Текст "Subscribe" над формою */
+  .subscribe-title {
+    text-align: left; /* вирівнювання тексту зліва */
+  }
+}
+
+@media (min-width: 1158px) {
+  .footer {
+    padding: 100px 0;
+  }
+
+  .footer .container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0;
+    max-width: 1158px;
+  }
+
+  .footer-info {
+    margin-right: 120px;
+  }
+
+  .footer-links {
+    margin-right: 80px;
+  }
+
+  .footer-subscribe {
+    width: auto;
+  }
+
+  .subscribe-form {
+    flex-wrap: nowrap;
+  }
+
+  .subscribe-input {
+    width: 264px;
+  }
+
+  .subscribe-button {
+    height: 40px;
+    min-width: 165px;
+  }
+}
+@media (min-width: 768px) {
+  .features-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px 24px;
+  }
+
+  .features-list li {
+    width: calc((100% - 24px) / 2); /* 2 колонки */
+  }
+
+  .features-item-title {
+    text-align: left; /* вирівнювання зліва */
+  }
+
+  .features-text {
+    text-align: left;
+  }
+
+  /* Іконок все ще НЕМАЄ на планшеті */
+  .features-icons {
+    display: none;
+  }
+}
+
+/* ========== ДЕСКТОП (1158px) ========== */
+@media (min-width: 1158px) {
+  .features-list {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 24px;
+  }
+
+  .features-list li {
+    width: calc((100% - 72px) / 4); /* 4 колонки */
+  }
+
+  /* НА ДЕСКТОПІ ПОКАЗУЄМО ІКОНКИ */
+  .features-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 264px;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border: 1px solid #8e8f99;
+  }
+
+  .features-item-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  .features-text {
+    font-weight: 400;
+    text-align: left;
+  }
 }
