@@ -1030,20 +1030,21 @@ SUBSCRIBE FORM
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+    height: 100vh;
+  
   background-color: #ffffff;
   padding: 72px 24px 40px;
   display: flex;
   flex-direction: column;
-  transform: translateX(100%); /* СХОВАНО */
+  transform: translateX(-100%); /* сховано зліва */
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
-
 /* Коли додадуть клас is-open - показуємо */
 .mobile-menu.is-open {
-  transform: translateX(0);
+  transform: translateX(0); 
 }
 
 /* Кнопка закриття */
@@ -1060,6 +1061,15 @@ SUBSCRIBE FORM
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+  padding: 0;
+}
+.mobile-menu-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  color: #2e2f42;
+  margin-bottom: 40px;
 }
 
 .mobile-nav {
@@ -1094,13 +1104,14 @@ SUBSCRIBE FORM
   flex-direction: column;
   gap: 24px;
   font-style: normal;
+  margin-bottom: 48px;
 }
 
 /* Телефон - звичайний сірий */
 .mobile-phone {
   font-weight: 500;
-  font-size: 24px;
-  line-height: 1.17;
+  font-size: 20px;
+  line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42; /* СІРИЙ */
   text-decoration: none;
@@ -1114,10 +1125,10 @@ SUBSCRIBE FORM
 
 /* Email - звичайний сірий */
 .mobile-email {
-  font-size: 20px;
-  line-height: 1.2;
+  font-size: 16px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #2e2f42; /* СІРИЙ */
+  color: #2e2f42; 
   text-decoration: none;
 }
 
@@ -1140,6 +1151,34 @@ SUBSCRIBE FORM
 .menu-toggle:hover svg,
 .mobile-menu-close:hover svg {
   fill: #404bbf; /* синій */
+}
+.mobile-social-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px; /* відступ між іконками */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-social-link:hover,
+.mobile-social-link:focus {
+  background-color: #404bbf;
+}
+
+.mobile-social-link svg {
+  fill: #f4f4fd;
 }
 /* Ховаємо мобільне меню на планшеті і компі */
 @media (min-width: 768px) {
