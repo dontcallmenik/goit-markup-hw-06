@@ -164,7 +164,7 @@ body {
   max-width: 320px;
   margin-left: auto;
   margin-right: auto;
-  padding: 72px 52px 200px 52px;
+  padding: 72px 0;
 
   background-image:
     linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
@@ -204,7 +204,9 @@ body {
 }
 
 .hero-title {
-  font-size: 36px; /* Приблизне значення для мобілки */
+  max-width: 216px;
+  font-size: 36px;
+  margin-bottom: 72px;
   line-height: 1.11;
   letter-spacing: 0.02em;
   text-align: center;
@@ -285,7 +287,7 @@ body {
 }
 .features-item-title {
   text-align: center;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
   letter-spacing: 0.02em;
@@ -297,7 +299,7 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
   color: #434455;
 }
 
@@ -398,7 +400,7 @@ body {
   flex-direction: column;
   gap: 48px;
 }
-.portolio-item {
+.portfolio-item {
   width: 100%;
 }
 /*.portfolio-list {
@@ -1095,6 +1097,12 @@ SUBSCRIBE FORM
 .mobile-nav {
   margin-bottom: auto;
   flex-grow: 1;
+}
+.mobile-menu-container {
+  display: flex;
+  flex-direction: column; /* Робимо колонку */
+  height: 100%;
+  padding: 72px 40px 40px;
 }
 
 .mobile-nav-list {
