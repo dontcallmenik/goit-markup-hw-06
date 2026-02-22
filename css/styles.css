@@ -1,6 +1,6 @@
 /* ========== BASE STYLES ========== */
 .container {
-  max-width: 100%;
+  max-width: 320px;
   padding-left: 16px;
   padding-right: 16px;
   margin: 0 auto;
@@ -41,7 +41,8 @@ body {
 }
 
 .section {
-  padding: 120px 0;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 /* ========== HEADER ========== */
@@ -203,14 +204,13 @@ body {
 }
 
 .hero-title {
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07;
+  font-size: 36px; /* Приблизне значення для мобілки */
+  line-height: 1.11;
   letter-spacing: 0.02em;
   text-align: center;
-  color: #ffffff;
-  max-width: 496px;
-  margin-bottom: 48px;
+  max-width: 320px; /* Обмежуємо ширину на мобілці */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-button {
@@ -1047,18 +1047,23 @@ SUBSCRIBE FORM
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: #fff;
 
-  background-color: #ffffff;
-  padding: 72px 24px 40px;
-  display: flex;
-  flex-direction: column;
-  transform: translateX(-100%); /* сховано зліва */
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 999;
-  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08);
+  /* ВИПРАВЛЕНО: схема приховування */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateX(100%); /* Виїжджає справа */
+  transition:
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Коли додадуть клас is-open - показуємо */
 .mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
   transform: translateX(0);
 }
 
@@ -1209,11 +1214,12 @@ SUBSCRIBE FORM
     max-width: 768px;
   }
 }
-@media (min-width: 1024px) {
+/*@media (min-width: 1158px) {
   .container {
     max-width: 1158px;
   }
 }
+  */
 
 @media (min-width: 768px) {
   .team-list {
@@ -1299,7 +1305,6 @@ SUBSCRIBE FORM
   }
 
   .team-list {
-    max-width: 1158px;
     gap: 24px;
   }
 
@@ -1323,17 +1328,20 @@ SUBSCRIBE FORM
   .portfolio-item {
     width: calc((100% - 48px) / 3);
   }
+}
 
-  /* Фіксований розмір для зображень на десктопі */
+/* Фіксований розмір для зображень на десктопі */
+
+@media (min-width: 1158px) {
   .portfolio-image-wrapper {
-    width: 360px; /* фіксована ширина */
-    height: 300px; /* фіксована висота */
+    width: 100%; /* змінено */
+    height: auto; /* змінено */
   }
 
   .portfolio-image-wrapper img {
-    width: 360px;
-    height: 300px;
-    object-fit: cover; /* обрізає, щоб заповнити */
+    width: 100%; /* змінено */
+    height: auto; /* змінено */
+    object-fit: cover;
   }
 }
 @media (min-width: 768px) {
@@ -1418,43 +1426,43 @@ SUBSCRIBE FORM
     max-width: 584px;
     margin: 0 auto;
   }
+}
 
-  /* Верхній рядок - логотип і соцмережі */
-  .footer-info {
-    width: 264px;
-  }
+/* Верхній рядок - логотип і соцмережі */
+.footer-info {
+  width: 264px;
+}
 
-  .footer-links {
-    width: 208px;
-  }
+.footer-links {
+  width: 208px;
+}
 
-  /* Нижній рядок - форма підписки */
-  .footer-subscribe {
-    width: 100%; /* займає весь рядок */
-  }
+/* Нижній рядок - форма підписки */
+.footer-subscribe {
+  width: 100%; /* займає весь рядок */
+}
 
-  .subscribe-form {
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-    align-items: center;
-    justify-content: flex-start; /* вирівнювання зліва */
-  }
+.subscribe-form {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+  justify-content: flex-start; /* вирівнювання зліва */
+}
 
-  .subscribe-input {
-    width: 264px;
-    height: 40px;
-  }
+.subscribe-input {
+  width: 264px;
+  height: 40px;
+}
 
-  .subscribe-button {
-    width: 165px;
-    height: 40px;
-  }
+.subscribe-button {
+  width: 165px;
+  height: 40px;
+}
 
-  /* Текст "Subscribe" над формою */
-  .subscribe-title {
-    text-align: left; /* вирівнювання тексту зліва */
-  }
+/* Текст "Subscribe" над формою */
+.subscribe-title {
+  text-align: left; /* вирівнювання тексту зліва */
 }
 
 @media (min-width: 1158px) {
@@ -1564,17 +1572,14 @@ SUBSCRIBE FORM
   }
 
   /* СПЕЦИФІЧНА ВИМОГА D4: обмежуємо Team та Footer */
-  .team .container,
-  .footer .container {
-    max-width: 584px;
-  }
 }
 
 /* ========== ДЕСКТОП (1158px) ========== */
 @media screen and (min-width: 1158px) {
   .container {
     max-width: 1158px;
-    padding: 0 15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   /* Скидаємо обмеження "584px", бо на десктопі Team знову широкий */
@@ -1595,5 +1600,19 @@ SUBSCRIBE FORM
 @media screen and (min-width: 1158px) {
   .modal {
     width: 408px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero-title {
+    font-size: 56px;
+    line-height: 1.07;
+    max-width: 496px; /* Ширина для великих екранів */
   }
 }
