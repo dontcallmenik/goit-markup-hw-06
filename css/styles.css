@@ -231,6 +231,27 @@ body {
   background-color: #404bbf;
 }
 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url(../images/people-office-1.2x.jpg);
+  }
+}
+/* Додати перед рядком ~656 (перед першим retina медіа-запитом) */
+
+@media (min-width: 768px) {
+  .hero {
+    max-width: 768px;
+    padding: 112px 0;
+  }
+}
+
+@media (min-width: 1158px) {
+  .hero {
+    max-width: 1440px;
+    padding: 188px 0;
+  }
+}
 /* ========== UTILITIES ========== */
 .visually-hidden {
   position: absolute;
@@ -316,10 +337,19 @@ body {
   display: flex;
   flex-direction: column;
   gap: 72px;
+  align-items: center;
 }
 .team-item {
+  max-width: 264px;
   width: 100%;
+  background-color: #ffffff;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow:  0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+
+
 
 /*.team-item {
   background-color: #ffffff;
@@ -464,7 +494,7 @@ body {
 /* ========== FOOTER ========== */
 .footer {
   background-color: #2e2f42;
-  padding: 100px 0;
+  padding: 96px 0;
 }
 .footer .container {
   display: flex;
@@ -1337,7 +1367,7 @@ SUBSCRIBE FORM
     object-fit: cover;
   }
 }
-@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
+/*@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
 (min-width: 768px) and (min-resolution: 192dpi),
 (min-width: 768px) and (min-resolution: 2dppx) {
 
@@ -1361,6 +1391,7 @@ SUBSCRIBE FORM
       url(../images/people-office-1.2x.jpg);
   }
 }
+  */
 
 @media (min-width: 768px) {
   .nav-list {
@@ -1494,7 +1525,7 @@ SUBSCRIBE FORM
   }
 
   .subscribe-input {
-    width: 264px;
+    width: 288px;
   }
 
   .subscribe-button {
