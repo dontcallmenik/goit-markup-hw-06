@@ -962,9 +962,9 @@ SUBSCRIBE FORM
 
 .subscribe-form {
   display: flex;
-  flex-direction: column; /* всё в колонку */
+  flex-direction: row; 
   gap: 16px;
-  align-items: center; /* чтобы кнопка и input были по центру */
+  align-items: center; 
   width: 100%;
 }
 
@@ -1651,5 +1651,22 @@ SUBSCRIBE FORM
   .logo {
     padding: 24px 0;
     margin-right: 76px;
+  }
+}
+@media (max-width: 767px) {
+  .subscribe-form {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .subscribe-input {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .subscribe-button {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
