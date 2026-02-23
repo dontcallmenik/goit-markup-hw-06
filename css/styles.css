@@ -1121,7 +1121,7 @@ SUBSCRIBE FORM
   display: flex;
   flex-direction: column; /* Робимо колонку */
   height: 100%;
-  padding: 72px 40px 40px;
+  padding: 72px 16px 40px;
 }
 
 .mobile-nav-list {
@@ -1682,5 +1682,10 @@ SUBSCRIBE FORM
 @media (min-width: 768px) {
   .subscribe-title {
     text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  .mobile-menu-container {
+    padding: 72px 24px 40px; /* 24px для планшета */
   }
 }
