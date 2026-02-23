@@ -1169,8 +1169,9 @@ SUBSCRIBE FORM
 
 /* Email - звичайний сірий */
 .mobile-email {
-  font-size: 16px;
-  line-height: 1.5;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
   text-decoration: none;
@@ -1199,7 +1200,7 @@ SUBSCRIBE FORM
 .mobile-social-list {
   display: flex;
   justify-content: space-between;
-  gap: 16px; /* відступ між іконками */
+  gap: 40px; 
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1525,7 +1526,7 @@ SUBSCRIBE FORM
   }
 
   .subscribe-input {
-    width: 288px;
+    width: 264px;
   }
 
   .subscribe-button {
