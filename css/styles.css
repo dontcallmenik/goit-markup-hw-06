@@ -68,8 +68,8 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   color: #2e2f42;
-  padding: 24px 0;
-  margin-right: 76px;
+  padding: 16px 0;
+  margin-right: 0;
 }
 
 .logo span {
@@ -162,8 +162,7 @@ body {
 
 .hero {
   max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding: 72px 0;
 
   background-image:
@@ -174,15 +173,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-@media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  .hero {
-    background-image:
-      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url(../images/people-office-1.2x.jpg); /* Путь к вашей 2x картинке */
-  }
-}
+
 /*.hero {
   max-width: 1440px;
   margin-left: auto;
@@ -204,6 +195,7 @@ body {
 }
 
 .hero-title {
+  font-weight: 700;
   max-width: 216px;
   font-size: 36px;
   margin-bottom: 72px;
@@ -213,6 +205,7 @@ body {
 
   margin-left: auto;
   margin-right: auto;
+  color: white;
 }
 
 .hero-button {
@@ -402,6 +395,10 @@ body {
 }
 .portfolio-item {
   width: 100%;
+  box-shadow:
+    0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-item:hover {
@@ -1340,25 +1337,31 @@ SUBSCRIBE FORM
     object-fit: cover;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
+(min-width: 768px) and (min-resolution: 192dpi),
+(min-width: 768px) and (min-resolution: 2dppx) {
+
   .hero {
     max-width: 768px;
     padding: 112px 0;
     background-image:
       linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url(../images/people-office-1.jpg);
+      url(../images/people-office-1.2x.jpg);
   }
 }
 
-@media (min-width: 1158px) {
+@media (min-width: 1158px) and (-webkit-min-device-pixel-ratio: 2),
+(min-width: 1158px) and (min-resolution: 192dpi),
+(min-width: 1158px) and (min-resolution: 2dppx)  {
   .hero {
     max-width: 1440px;
     padding: 188px 0;
     background-image:
       linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url(../images/people-office-1.jpg);
+      url(../images/people-office-1.2x.jpg);
   }
 }
+
 @media (min-width: 768px) {
   .nav-list {
     display: flex;
@@ -1610,5 +1613,11 @@ SUBSCRIBE FORM
     font-size: 56px;
     line-height: 1.07;
     max-width: 496px; /* Ширина для великих екранів */
+  }
+}
+@media (min-width: 768px) {
+  .logo {
+    padding: 24px 0;
+    margin-right: 76px;
   }
 }
